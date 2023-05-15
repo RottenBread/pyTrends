@@ -22,7 +22,6 @@ if response.status_code == 200:
     html = requests.get(url)
     soup = BeautifulSoup(html.text, 'lxml')
     ul = soup.find("ul", {"id":"issueKeywordList"})
-    num = ul.findAll("span", {"class":"num"})
     word = ul.findAll("span", {"class":"word"})
     for i in range(10):
         rank.append(word[i].text)
